@@ -1,60 +1,69 @@
 import React, { useState } from 'react';
 import Form from 'components/Form/Form';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate,useLocation, } from 'react-router-dom';
 import { setUser } from 'store/userSlice';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useAppDispatch } from 'hooks/redux-hooks';
 import axios from 'axios';
-import { request } from 'http';
+import { useAuth } from 'hooks/use-auth';
+import {setSendLastPage } from '../../store/articleSlice';
 
+
+interface Users {
+  email: string,
+  password: string,
+  username: string,
+  token: string,
+}
 
 const Login: React.FC = () => {
 
-  const dispatch = useAppDispatch()
-  const push = useNavigate()
 
-  // const handleLogin = (email: string, password: string, name: string) => {
+  const dispatch = useAppDispatch();
+  const push = useNavigate();
+  const location = useLocation();
 
-  //   const auth = getAuth()
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then(({ user }) => {
-  //       // console.log(user);
-  //       dispatch(
-  //         setUser({
-  //           email: user.email,
-  //           id: user.uid,
-  //           token: user.refreshToken,
-  //           nameUser: name,
-  //         }),
-  //       )
-  //       push('/')
-  //     })
-  //     .catch(() => '')
-  // }
 
+  const {isAuth,userToken,userName,userEmail} = useAuth();
   const [userError, setUserError] = useState<string>('');
   const [userEmailError, setUserEmailError] = useState<string>('');
 
-  const baseUrl = 'https://conduit.productionready.io/api/users/login'
-  const registerUser = async () => {
+  const baseUrl = 'https://conduit.productionready.io/api/users/login';
 
-    const userLoc = localStorage.getItem('token') || '{}'
-    const user = JSON.parse(userLoc)
-    console.log(user.token,user.email,
-      user.password)
+
+
+  const registerUser = async (email: string, pass: string) => {
+
+    const user = {
+      email: email,
+      password: pass,
+    };
 
     await axios
-      .post(baseUrl,{
-        email: user.email ,
-        // password:user.password,
-        token: user.token,
-        // username:user.username
-      }).then((response) => console.log(response)
+      .post(baseUrl, { user }
+
+      ).then((response) => {
+        localStorage.setItem('tokenData', response.data.user.token)
+        dispatch(setUser({
+          userEmail: response.data.user.email,
+          userToken: response.data.user.token,
+          userName: response.data.user.username,
+        }));
+
+
+        // axios.interceptors.request.use((config: any) => {
+        //   const token = localStorage.getItem('tokenData');
+        //   config.headers.Authorization = `Token ${token}`;
+        //   return config;
+        // });
+        dispatch(setSendLastPage(location.pathname));
+        push('/');
+      }
       ).catch((err) => {
-        console.log(err)
+        console.log(err);
       })
   }
+
+
 
   return (
     <Form

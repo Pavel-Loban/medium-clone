@@ -4,6 +4,9 @@ import Navigation from './Navigation/Navigation';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+
+
+
     return (
         <div className={styles.nav_wrapper} >
             <Link to='/'>

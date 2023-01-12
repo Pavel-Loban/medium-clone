@@ -6,8 +6,6 @@ import styles from './login.module.scss'
 const LoginPage:React.FC = () => {
     return (
         <div className={styles.login_container} >
-            {/* <h1 className={styles.title}>Sign in</h1> */}
-            {/* <Link to='/register'><span>Need an account?</span> </Link> */}
             <Login/>
 
 

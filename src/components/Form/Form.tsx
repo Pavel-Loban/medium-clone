@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './form.module.scss';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 interface Props {
     title: string;
@@ -30,35 +29,15 @@ const Form: React.FC<Props> = ({ title, titleButton,
     const [passDirty, setPassDirty] = useState<boolean>(false);
     const [emailError, setEmailError] = useState<string>('');
 
-    // const [passError, setPassError] = useState<string>('password не может быть пустым');
+
     const [formValid, setFormValid] = useState<boolean>(false)
 
     const location = useLocation();
-    // console.log(location)
 
     const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value)
-
-        // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        // if (!re.test(String(e.target.value).toLocaleLowerCase())) {
-        //     setEmailError('email or password is invalid')
-        //     setEmailDirty(true);
-        //     setFormValid(true)
-        // } else {
-        //     setEmailError('')
-        //     setEmailDirty(false)
-        // }
     }
 
-    // const passHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setPass(e.target.value)
-
-    //     if (e.target.value.length < 3 || e.target.value.length > 8) {
-    //         setPassError('password  is invalid')
-    //     } else {
-    //         setPassError('')
-    //     }
-    // }
     React.useEffect(() => {
         if (email && pass) {
             setFormValid(true)
@@ -96,7 +75,7 @@ const Form: React.FC<Props> = ({ title, titleButton,
     const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (email && pass) {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if ((!re.test(String(email).toLocaleLowerCase()) || (pass.length < 3 || pass.length > 8))) {
+            if (!re.test(String(email).toLocaleLowerCase()) || (pass.length < 3 || pass.length > 8)) {
                 setEmailError('email or password is invalid')
                 setEmailDirty(true);
                 // console.log(1)
@@ -107,16 +86,6 @@ const Form: React.FC<Props> = ({ title, titleButton,
             }
         }
         setEmailDirty(false)
-        // switch (e.target.name) {
-        //     case 'email':
-        //         setEmailDirty(true)
-        //         setEmailError('email or password is invalid')
-        //         break
-        //     case 'password':
-        //         setPassDirty(true)
-        //         setEmailError('email or password is invalid')
-        //         break
-        // }
     }
 
     return (
@@ -128,12 +97,6 @@ const Form: React.FC<Props> = ({ title, titleButton,
                     <Link to='/register'><div className={styles.subTitle}>{subTitle}</div> </Link>
                     :
                     <Link to='/login'><div className={styles.subTitle}>{subTitle}</div> </Link>}
-
-                {/* <ul className={styles.error}>
-                <li>
-                    {error}
-                </li>
-            </ul> */}
 
 
 {userError && <div style={{ color: 'red' }} >username {userError} </div>}
@@ -160,7 +123,6 @@ const Form: React.FC<Props> = ({ title, titleButton,
                         // onChange={(e) => emailHandler(e)}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder='Email'
-
                     />
                 </div>
 
@@ -179,7 +141,6 @@ const Form: React.FC<Props> = ({ title, titleButton,
                 <div className={styles.button_wrapper}>
                     <button disabled={!formValid} className={styles.button_login}
                         type='submit'
-                    // onClick={() => handlClick(email,pass,name)}
                     >
                         {titleButton}
                     </button>

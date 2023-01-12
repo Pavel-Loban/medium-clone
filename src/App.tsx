@@ -7,12 +7,19 @@ import Home from 'pages/home/home';
 import LoginPage from "pages/Login/LoginPage";
 import RegisterPage from "pages/Register/RegisterPage";
 import {useAuth} from './hooks/use-auth';
+import NewArticle from 'pages/newArticle/newArticle';
+import YourFeed from 'pages/yourFeed/yourFeed';
+import Footer from 'components/Footer/Footer';
+import Settings from 'pages/settings/settings';
 
 function App() {
+
+  const { isAuth } = useAuth()
   return (
     <Router basename="/">
       <div className={styles.App}>
         <Navbar />
+
         {/* <Banner/> */}
         <div className={styles.content}>
           {/* content */}
@@ -20,15 +27,16 @@ function App() {
 
           <Routes >
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/yourfeed" element={<YourFeed /> }  />
             <Route path="/login" element={<LoginPage /> }  />
             <Route path="/register" element={<RegisterPage /> }  />
-
+            <Route path="/newArticle" element={<NewArticle /> }  />
+            <Route path="/settings" element={<Settings /> }  />
 
 
           </Routes>
         </div>
-        <p>Footer</p>
+        <Footer/>
       </div>
 
     </Router>

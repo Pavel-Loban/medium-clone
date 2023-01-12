@@ -1,34 +1,35 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // interface UserSliceState {
-//     email: string | null;
-//      token: string | null;
-//      id: number | null;
-//      nameUser: string | null;
+//     userEmail:  null |string ;
+//     userToken: string | null;
+//     //  id: number | null;
+//     userName: string | null;
 // }
 
 const initialState = {
-     email: null,
-     token: null,
-     id: null,
-     nameUser: 'Guest',
+    userEmail: null,
+    userToken: null,
+    //  id: null,
+     userName: null,
 }
 
-const userSlice = createSlice({name: 'user',
+const userSlice = createSlice(
+    {name: 'user',
     initialState,
     reducers: {
         setUser(state, action ) {
-            state.email = action.payload.email;
-            state.token = action.payload.token;
-            state.id = action.payload.id;
-            state.nameUser = action.payload.nameUser;
+            state.userEmail = action.payload.userEmail;
+            state.userToken = action.payload.userToken;
+            // state.id = action.payload.id;
+            state.userName = action.payload.userName;
 
         },
         removeUser(state) {
-            state.email = null;
-            state.token = null;
-            state.id = null;
-            state.nameUser = '';
+            state.userEmail = null;
+            state.userToken = null;
+            // state.id = null;
+            state.userName = null;
         },
     }
 })

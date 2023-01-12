@@ -1,6 +1,10 @@
 .home_wrapper {
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+//   align-items: center;
+    width: 100%;
+    padding: 0 40px;
 
     .home_content {
         display: flex;
@@ -24,7 +28,7 @@
                 padding: 10px;
                 cursor: pointer;
                 color: rgba(0, 0, 0, 0.5);
-
+                display: block;
                 &:hover{
                     color: rgba(0, 0, 0, 0.8);
                 }
@@ -35,6 +39,12 @@
                 color:forestgreen;
                 border-bottom: 2px solid #5cb85c;;
             }
+            .hide{
+                display: none;
+            }
+            // .show{
+            //     display: block;
+            // }
         }
 
         .img {

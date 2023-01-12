@@ -1,0 +1,19 @@
+.wrapper{
+    padding: 20px 0;
+    background-color:#f3f3f3;
+
+    .content{
+        display:flex;
+        flex-direction: row;
+        padding: 0 40px;
+        font-size: 14px;
+
+        .link{
+            color: rgb(92, 184, 92);
+            margin-right: 10px;
+        }
+        p{
+            color:rgba(0, 0, 0, 0.5);
+        }
+    }
+}
