@@ -1,0 +1,32 @@
+.register{
+    // background: blueviolet;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+        width: 0;
+      }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: white;
+        font-size: 20px;
+
+        & span{
+            color: silver;
+             text-decoration: underLine;
+
+             &:hover{
+                color: white;
+             }
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+.root{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+        li{
+            margin-bottom:21px;
+            a{
+                padding: 10px;
+                border: 1px solid black;
+
+
+                &:hover{
+                    color: #fff;
+                    background-color: #5cb85c;
+                }
+            }
+        }
+
+
+
+
+    :global {
+        .selected {
+           a{
+            color: #fff;
+            background-color: #5cb85c;
+           }
+        }
+    }
+}
+
+.hide{
+    display: none;
+}

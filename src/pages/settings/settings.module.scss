@@ -1,0 +1,103 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title{
+        font-size: 36px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 500px;
+        width: 100%;
+        padding: 10px 10px;
+    }
+
+    .input_main {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 0 10px;
+        color: rgba(0, 0, 0);
+        background-color: white;
+    }
+
+    .input_avatar {
+        @extend .input_main;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .error{
+        color:red;
+        padding-bottom: 5px;
+    }
+
+    .input_changepass_wrapper{
+        position: relative;
+        width: 100%;
+    }
+    .input_name {
+        @extend .input_main;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .input_textarea {
+        @extend .input_main;
+        height: 140px;
+        font-size: 16px;
+        resize: vertical;
+        padding:  10px 10px;
+    }
+
+    .button_wrapper{
+        text-align: right;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 10px;
+    }
+    .button{
+        background-color: #5cb85c ;
+        padding: 20px 20px;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #53a553 ;
+        }
+    }
+
+    .btn_logout_wrapper{
+        text-align: left;
+        width: 100%;
+        padding:  10px 0;
+
+        .button_logout{
+            padding: 10px 10px;
+            border-radius: 5px;
+            border: 1px solid #b85c5c;
+            font-size: 14px;
+            cursor: pointer;
+            color:#b85c5c;
+            background-color: #ffffff;
+
+            &:hover{
+                background-color: #b85c5c;
+                color:#ffffff;
+            }
+        }
+    }
+    .hide{
+        display: none;
+    }
+}

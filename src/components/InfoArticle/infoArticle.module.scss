@@ -1,0 +1,45 @@
+
+    .infoArticleBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .iconArticle {
+            /* background-color: aquamarine;
+            border-radius: 50%; */
+
+            .imgArticle {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        }
+
+        .dateAndNameArticle {
+            display: flex;
+            flex-direction: column;
+            padding: 0 5px;
+
+            .nameAutor {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                color: #5cb85c;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(70, 136, 70);
+                    text-decoration: underline;
+                }
+            }
+
+            .dateArticle {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                color: rgb(184, 189, 184);
+                font-size: .8rem;
+            }
+        }
+    }

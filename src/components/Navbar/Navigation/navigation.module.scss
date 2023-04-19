@@ -1,0 +1,50 @@
+.linkWrapper{
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 500px) {
+        & {
+            flex-wrap: wrap;
+
+        }
+    }
+
+    & .linkItem{
+        margin-left: 10px;
+    }
+
+    & .linkItem{
+        color:rgba(0, 0, 0, 0.302);
+        &:hover{
+            color:rgba(2, 2, 2, 0.7);
+        }
+        &:hover .img *{
+            fill: #020202b3;
+        }
+
+
+
+    }
+
+    .wrapper_image{
+        display: flex;
+        align-items: center;
+
+    }
+    .image{
+        height: 26px;
+        border-radius: 50px;
+        float: left;
+        margin-right: 5px;
+    }
+    .linkItemChange{
+        margin-left: 10px;
+        color:rgba(2, 2, 2, 0.7);
+        .img *{
+            fill: #020202b3;
+        }
+
+
+    }
+
+}

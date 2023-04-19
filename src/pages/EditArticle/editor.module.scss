@@ -1,0 +1,52 @@
+.input_main {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 0 20px;
+    color: rgba(0, 0, 0);
+    background-color: white;
+}
+
+
+.wrapper_new_article{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 83%;
+
+    .form_new_article{
+        /* flex: 0 1 50%; */
+        width: 100%;
+
+        .input_title_article{
+            @extend .input_main;
+            height: 50px;
+            font-size: 1.25rem;
+        }
+
+        .input_about_article{
+            @extend .input_main;
+            height: 40px;
+            font-size: 14px;
+        }
+
+        .text_article{
+            @extend .input_main;
+            height: 195px;
+            resize: vertical;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        .input_tags_article{
+            @extend .input_main;
+            height: 40px;
+
+        }
+
+    }
+
+}

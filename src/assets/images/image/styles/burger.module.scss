@@ -1,0 +1,55 @@
+
+.burger_menu_active {
+    @extend %box_burger;
+    left: 10px;
+    height: 85%;
+    overflow-y: scroll;
+
+
+    @media (min-width: 768px) {
+        & {
+            display: none;
+        }
+    }
+
+    @media (max-width: 530px) {
+        & {
+            position: absolute;
+            width: 312px;
+            padding: 32px 0px 52px 16px;
+            left: 10px;
+
+        }
+    }
+
+    @media (max-width: 500px) {
+        & {
+            top: 76px;
+        }
+    }
+}
+
+.burger_menu {
+    @extend %box_burger;
+    left: -130%;
+
+
+    @media (max-width: 530px) {
+        & {
+            position: absolute;
+            width: 312px;
+            padding: 32px 0px 52px 16px;
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        & {
+            top: 76px;
+        }
+    }
+
+}
+
+
+
