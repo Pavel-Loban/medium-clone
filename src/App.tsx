@@ -17,7 +17,7 @@ function App() {
 
   return (
     <React.StrictMode>
-    <Router basename="/">
+    <Router basename="/medium-clone">
       <div className={styles.App}>
         <Navbar />
 
