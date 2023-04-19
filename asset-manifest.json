@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/medium-clone/static/css/main.85879f7d.css",
-    "main.js": "/medium-clone/static/js/main.7fee1ecd.js",
+    "main.css": "/medium-clone/static/css/main.3a213217.css",
+    "main.js": "/medium-clone/static/js/main.f1c65975.js",
     "static/media/Nunito-VariableFont_wght.ttf": "/medium-clone/static/media/Nunito-VariableFont_wght.4a3eef3e0a61b7eb3eda.ttf",
     "static/media/TitilliumWeb-Light.ttf": "/medium-clone/static/media/TitilliumWeb-Light.2b8d1521998c2d55bb51.ttf",
     "static/media/settings.svg": "/medium-clone/static/media/settings.bbbb50689bdf937be96336336ca72213.svg",
@@ -9,11 +9,11 @@
     "index.html": "/medium-clone/index.html",
     "static/media/eye-open.svg": "/medium-clone/static/media/eye-open.6648ff5dec351ea5e1476a4e302df1af.svg",
     "static/media/heart2.svg": "/medium-clone/static/media/heart2.8f691a3a21c48cfeb70950e8c210d22d.svg",
-    "main.85879f7d.css.map": "/medium-clone/static/css/main.85879f7d.css.map",
-    "main.7fee1ecd.js.map": "/medium-clone/static/js/main.7fee1ecd.js.map"
+    "main.3a213217.css.map": "/medium-clone/static/css/main.3a213217.css.map",
+    "main.f1c65975.js.map": "/medium-clone/static/js/main.f1c65975.js.map"
   },
   "entrypoints": [
-    "static/css/main.85879f7d.css",
-    "static/js/main.7fee1ecd.js"
+    "static/css/main.3a213217.css",
+    "static/js/main.f1c65975.js"
   ]
 }
